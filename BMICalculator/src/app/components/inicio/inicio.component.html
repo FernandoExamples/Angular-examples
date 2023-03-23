@@ -1,0 +1,68 @@
+<div class="row">
+    <div class="col-12 text-center">
+        <h2 class="titulo">BMI CALCULATOR</h2>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-4">
+        <div class="row">
+            <div class="col-6" style="cursor: pointer;" (click)="sexo = 'M'">
+                <div class="fondoitem contenedor" [ngClass]="{inactive : sexo != 'M'}">
+                    <i class="fa-solid fa-mars"></i>
+                    <p>Masculino</p>
+                </div>
+            </div>
+
+            <div class="col-6" style="cursor: pointer;" (click)="sexo = 'F'">
+                <div class="fondoitem contenedor" [ngClass]="{inactive : sexo != 'F'}">
+                    <i class="fa-solid fa-venus"></i>
+                    <p>Femenino</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="fondoitem contenedor">
+                    <p class="m-0">Altura</p>
+                    <div class="d-flex align-items-end">
+                        <div class="numero">{{altura}}</div>
+                        <span>cm</span>
+                    </div>
+                    <input type="range" class="form-range" id="customRange1" [value]="altura" min="120" max="220" (input)="cambiarAltura($event)">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <div class="fondoitem contenedor">
+                    <p class="m-0">Peso</p>
+                    <div class="numero">{{peso}}</div>
+                    <div class="d-flex gap-3">
+                        <i class="fa-solid fa-minus" (click)="peso = peso-1"></i>
+                        <i class="fa-solid fa-plus" (click)="peso = peso+1"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="fondoitem contenedor">
+                    <p class="m-0">Edad</p>
+                    <div class="numero">{{edad}}</div>
+                    <div class="d-flex gap-3">
+                        <i class="fa-solid fa-minus" (click)="edad = edad -1"></i>
+                        <i class="fa-solid fa-plus" (click)="edad = edad +1"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <button (click)="calcularBMI()" class="btn btn-primary w-100 d-block">CALCULAR</button>
+            </div>
+        </div>
+    </div>
+</div>

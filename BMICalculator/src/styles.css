@@ -1,0 +1,21 @@
+body {
+  background-color: #0a0e21;
+  padding: 25px;
+  color: white;
+}
+
+.titulo {
+  font-family: 'Raleway', sans-serif;
+}
+
+.row {
+  margin-top: 20px;
+}
+
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+}

@@ -1,0 +1,43 @@
+.fondoitem {
+  background-color: #ff111328;
+  height: 130px;
+  border-radius: 20px;
+  font-size: 20px;
+}
+
+.fa-mars,
+.fa-venus {
+  font-size: 40px;
+}
+
+.fa-minus,
+.fa-plus {
+  background-color: #ff3366;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+button {
+  border-radius: 50px;
+  background-color: #ff3366;
+  border-color: #ff3366;
+}
+
+button:hover {
+  background-color: #ff3366;
+  border-color: #ff3366;
+}
+
+.numero {
+  font-size: 32px;
+  font-weight: 800;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  background-color: #ff3366;
+}
+
+.inactive {
+  background-color: #7d2f2f33;
+}
