@@ -1,0 +1,38 @@
+<h4 class="text-center">Ingresar gasto</h4>
+<hr>
+
+<form (ngSubmit)="agregarPresupuesto(gastoForm)" #gastoForm="ngForm">
+    <div class="form-group">
+        <label for="gasto">Gasto</label>
+        <input type="text" class="form-control form-control-lg" placeholder="Ej. Comida" name="nombreGasto" required [(ngModel)]="nombreGasto"
+               #gastoModel="ngModel">
+
+        <div *ngIf="gastoModel.invalid && (gastoModel.dirty || gastoModel.touched)">
+            <p *ngIf="gastoModel.errors?.['required']" class="m-0 p-0 text-danger">
+                El nombre es requerido
+            </p>
+        </div>
+    </div>
+
+    <div class="form-group mt-3">
+        <label for="cantidad">Cantidad</label>
+        <input type="number" class="form-control form-control-lg" placeholder="Ingrese cantidad" name="cantidad" required min="1" [max]="restante"
+               [(ngModel)]="cantidad"
+               #cantidadModel="ngModel">
+
+        <div *ngIf="cantidadModel.invalid && (cantidadModel.dirty || cantidadModel.touched)">
+            <p *ngIf="cantidadModel.errors?.['required']" class="m-0 p-0 text-danger">
+                La cantidad es requerida
+            </p>
+            <p *ngIf="cantidadModel.errors?.['min']" class="m-0 p-0 text-danger">
+                La cantidad debe ser mayor a 0
+            </p>
+            <p *ngIf="cantidadModel.errors?.['max']" class="m-0 p-0 text-danger">
+                La cantidad no debe exceder la cantidad restante: {{restante | currency}}
+            </p>
+        </div>
+    </div>
+
+    <button class="btn btn-success btn-lg w-100 mt-3" type="submit">Ingresar</button>
+
+</form>

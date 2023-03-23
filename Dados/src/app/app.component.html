@@ -1,0 +1,14 @@
+<h1 class="text-center">Dados</h1>
+
+<div class="text-center my-4">
+  <button class="btn btn-success btn-lg" type="button" (click)="tirarDados()">Tirar Dados</button>
+</div>
+
+<div class="d-flex justify-content-center gap-5 mt-5">
+  <img [src]="dado1" width="200" class="dado">
+  <img [src]="dado2" width="200" class="dado">
+</div>
+
+<div class="text-center mt-5">
+  <h2 *ngIf="dado1 == dado2">Ganaste</h2>
+</div>

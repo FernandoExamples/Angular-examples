@@ -1,0 +1,36 @@
+<div class="container mt-3">
+    <app-count-empleados [todos]="getTotalEmployes()" [femeninos]="getTotalFemenino()" [masculinos]="getTotalMasculino()" (onChangeSexo)="sexo = $event" />
+
+    <div class="card mt-3">
+        <div class="card-body">
+            <table class="table table-light mt-4">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Sexo</th>
+                        <th scope="col">Salario</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+
+                    <ng-container *ngFor="let empleado of listEmpleado">
+                        <tr *ngIf="empleado.sexo == sexo || sexo == 'Todos'">
+                            <th scope="row">{{empleado.id}}</th>
+                            <td>{{empleado.nombre}}</td>
+                            <td>{{empleado.apellido}}</td>
+                            <td>{{empleado.sexo}}</td>
+                            <td>{{empleado.salario | currency}}</td>
+                        </tr>
+                    </ng-container>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+</div>
