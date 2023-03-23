@@ -1,0 +1,32 @@
+<div class="container pt-4">
+    <div class="row justify-content-around">
+        <div class="col-4">
+            <img [src]="urlImagen" width="300px" height="300px">
+        </div>
+        <div class="col-6">
+            <input type="text" class="form-control form-control-lg size" placeholder="Ingresa ciudad" [(ngModel)]="ciudad">
+
+            <div class="text-center mt-3" *ngIf="isLoading">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+
+            <button *ngIf="!isLoading" class="btn btn-primary btn-lg btn-block w-100 mt-4 size" [disabled]="!ciudad" (click)="obtenerClima()">Consultar</button>
+
+            <div class="card mt-3" *ngIf="!isLoading && clima.temperatura && !error">
+                <div class="card-body text-center">
+                    <p><b>Temperatura:</b> {{clima.temperatura}}</p>
+                    <p><b>Humedad:</b> {{clima.humedad}}</p>
+                    <p><b>Clima:</b> {{clima.clima}}</p>
+                </div>
+            </div>
+
+            <div class="alert alert-dismissible alert-danger mt-3" *ngIf="error">
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                {{error}}
+            </div>
+
+        </div>
+    </div>
+</div>
