@@ -2,5 +2,8 @@
 
 <div class="container">
   <app-formulario (onChangeSelect)="buscarNoticias($event.categoria, $event.pais)"></app-formulario>
-  <app-listado-noticias></app-listado-noticias>
+  <app-listado-noticias [noticias]="noticias"></app-listado-noticias>
+  <div class="text-center" *ngIf="isLoading">
+    <app-spinner></app-spinner>
+  </div>
 </div>

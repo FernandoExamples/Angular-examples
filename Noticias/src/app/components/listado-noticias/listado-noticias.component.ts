@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Noticia } from 'src/app/models/Noticia'
 
 @Component({
   selector: 'app-listado-noticias',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./listado-noticias.component.css']
 })
 export class ListadoNoticiasComponent {
-
+  @Input() noticias: Noticia[] = []
 }
