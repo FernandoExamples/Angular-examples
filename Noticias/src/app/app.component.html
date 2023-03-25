@@ -1,0 +1,6 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <app-formulario (onChangeSelect)="buscarNoticias($event.categoria, $event.pais)"></app-formulario>
+  <app-listado-noticias></app-listado-noticias>
+</div>
