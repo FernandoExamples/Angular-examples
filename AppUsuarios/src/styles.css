@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+.btn-rounded {
+  border-radius: 50px !important;
+  background-color: #f05f44 !important;
+  border-color: #f05f44 !important;
+  width: 200px !important;
+  padding: 1rem 2rem !important;
+  transition: all 0.3s !important;
+}
+
+.btn-rounded:hover {
+  background-color: #ee4b08 !important;
+  border-color: #ee4b08 !important;
+}
