@@ -6,6 +6,7 @@ import { EmpleadoService } from 'src/app/core/services/empleado.service';
 import { Empleado } from 'src/app/core/models/empleado';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmacionComponent } from 'src/app/shared/components/confirmacion/confirmacion.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-home',
@@ -28,7 +29,8 @@ export class HomeComponent implements AfterViewInit {
 
   constructor(
     private readonly empleadoService: EmpleadoService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private snackBar: MatSnackBar
   ) {}
 
   applyFilter(event: Event) {
@@ -53,12 +55,16 @@ export class HomeComponent implements AfterViewInit {
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed');
       console.log(result);
-      
+
       if (result === 'aceptar') {
         this.empleadoService.eliminarEmpleado(index);
         this.reloadDataTable();
+        this.snackBar.open('Empleado eliminado', '', {
+          duration: 3000,
+          verticalPosition: 'top',
+          horizontalPosition: 'right',
+        });
       }
     });
   }
