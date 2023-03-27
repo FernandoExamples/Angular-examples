@@ -8,7 +8,7 @@ import { CoreModule } from './core/core.module';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { SharedModule } from './shared/shared.module';
-import { AngularMaterialModule } from './modules/angular-material/angular-material.module';
+import { AngularMaterialModule } from './shared/angular-material/angular-material.module';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, FooterComponent],
