@@ -6,6 +6,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { EditarComponent } from './pages/editar/editar.component';
 import { CrearComponent } from './pages/crear/crear.component';
 import { AngularMaterialModule } from 'src/app/shared/angular-material/angular-material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [EditarComponent, CrearComponent],
@@ -14,6 +15,7 @@ import { AngularMaterialModule } from 'src/app/shared/angular-material/angular-m
     CrudEmpleadosRoutingModule,
     SharedModule,
     AngularMaterialModule,
+    ReactiveFormsModule,
   ],
 })
 export class CrudEmpleadosModule {}
