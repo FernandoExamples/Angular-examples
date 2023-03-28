@@ -32,9 +32,6 @@ export class CrearComponent {
       estadoCivil: ['', [Validators.required]],
       sexo: ['', [Validators.required]],
     });
-
-    console.log(this.form);
-    console.log(this.form.get('nombre'));
   }
 
   guardarEmpleado() {

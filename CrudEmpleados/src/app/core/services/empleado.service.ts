@@ -34,7 +34,17 @@ export class EmpleadoService {
     this.listEmpleado.push(empleado);
   }
 
+  editEmpleado(nombre: string, newData: Partial<Empleado>) {
+    this.listEmpleado = this.listEmpleado.map((x) =>
+      x.nombre == nombre ? { ...x, ...newData } : x
+    );
+  }
+
   eliminarEmpleado(index: number) {
     this.listEmpleado.splice(index, 1);
+  }
+
+  getEmpleado(nombre: string) {
+    return this.listEmpleado.find((x) => x.nombre == nombre);
   }
 }
